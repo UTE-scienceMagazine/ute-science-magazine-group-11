@@ -1,12 +1,26 @@
+function changeSTTbyMaster() {
+
+	var x = document.getElementById("mySelect").value;
+	if(x ==1 )
+	{
+		window.location = "list-accout-by-role.html";
+	}
+	if(x==2)
+	{
+		window.location = "list-accout-by-role.html";
+
+	}
+}
+
 $(function() {
 
 	$(document).ready(function() {
 		$("#txtEditor").Editor();
 	});
-	
-	
-	
-	
+
+
+
+
 	$('.dropdown').hover(function() {
 		$(this).addClass('open');
 	}, function() {
