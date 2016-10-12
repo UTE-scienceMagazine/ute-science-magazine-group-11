@@ -3,11 +3,11 @@ function changeSTTbyMaster() {
 	var x = document.getElementById("mySelect").value;
 	if(x ==1 )
 	{
-		window.location = "list-accout-by-role.html";
+		window.location = "send-post-to-editor.html";
 	}
 	if(x==2)
 	{
-		window.location = "list-accout-by-role.html";
+		window.location = "send-post-to-editor.html";
 
 	}
 }
@@ -16,9 +16,39 @@ $(function() {
 
 	$(document).ready(function() {
 		$("#txtEditor").Editor();
+
 	});
 
+	$(document).ready(function() {
+	    $('a.ask-window').click(function() {
+	        //lấy giá trị thuộc tính href - chính là phần tử "#login-box"
+	        var loginBox = $(this).attr('href');
 
+	        //cho hiện hộp đăng nhập trong 300ms
+	        $(loginBox).fadeIn(300);
+
+	        // thêm phần tử id="over" vào sau body
+	        $('body').append('<div id="over">');
+	        $('#over').fadeIn(300);
+
+	        return false;
+	 });
+
+	 // khi click đóng hộp thoại
+	 $(document).on('click', "a.close, #over", function() {
+	       $('#over, .ask').fadeOut(300 , function() {
+	           $('#over').remove();
+	       });
+	      return false;
+	 });
+
+	 $(document).on('click', "button.close, #over", function() {
+	       $('#over, .ask').fadeOut(300 , function() {
+	           $('#over').remove();
+	       });
+	      return false;
+	 });
+	});
 
 
 	$('.dropdown').hover(function() {
